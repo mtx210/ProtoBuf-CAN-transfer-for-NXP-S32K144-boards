@@ -3,7 +3,8 @@
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/arm"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_Runtime/include"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_Runtime/include/arm"
--I"C:/Users/MTXX/Desktop/canchat/include"
+-I"C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/include"
+-I"C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/proto"
 -x assembler-with-cpp
 -O0
 -g3

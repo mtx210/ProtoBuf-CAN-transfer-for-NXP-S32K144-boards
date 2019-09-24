@@ -2,7 +2,7 @@ src/clocks_and_modes.o: ../src/clocks_and_modes.c \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/lib_c99.prefix \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/common.prefix \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_c_version.h \
- C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/CAN_Chat/canchat/include/S32K144.h \
+ C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/include/S32K144.h \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ansi_parms.h \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewlGlobals.h \
@@ -20,7 +20,7 @@ C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/common.prefix:
 
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_c_version.h:
 
-C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/CAN_Chat/canchat/include/S32K144.h:
+C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/include/S32K144.h:
 
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h:
 

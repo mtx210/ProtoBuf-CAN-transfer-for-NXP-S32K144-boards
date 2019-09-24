@@ -14,6 +14,7 @@
 #include "LPUART.h"
 
 #include "simpleNano.pb.h"
+#include "pb_encode.h"
 #include "ProtoBuff.h"
 
 int idle_counter = 0;           /* main loop idle counter */
@@ -117,16 +118,6 @@ int main(void) {
   PORT_init();             /* Configure ports */
   LPUART1_init();
 
-  LPUART1_transmit_string("=====================================\n\r");
-  LPUART1_transmit_string("|         CAN Chat - v4.20          |\n\r");
-  LPUART1_transmit_string("=====================================\n\r");
-
-  #ifdef NODE_A
-  	  LPUART1_transmit_string("=====NODE Alpha - standing by...=====\n\r");
-  #else
-  	  LPUART1_transmit_string("=====NODE Beta - standing by...======\n\r");
-  #endif
-
   clearRXDATA();
 
   for (;;) {
@@ -135,8 +126,11 @@ int main(void) {
 	  nanoPB_simpleNano message;
 	  LPUART1_transmit_string("Input a:\n\r");
 	  message.a = LPUART1_receive_char();
+	  LPUART1_transmit_char(message.a);
 	  LPUART1_transmit_string("\n\rInput b:\n\r");
 	  message.b = LPUART1_receive_char();
+	  LPUART1_transmit_char(message.b);
+	  LPUART1_transmit_string("\n\r");
 
 	  uint8_t buffer[2];
 	  pb_ostream_t stream;
