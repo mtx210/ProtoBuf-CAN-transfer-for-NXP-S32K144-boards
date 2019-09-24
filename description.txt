@@ -1,0 +1,1 @@
+Simple CAN transmit / receive application for two CAN bus devices
