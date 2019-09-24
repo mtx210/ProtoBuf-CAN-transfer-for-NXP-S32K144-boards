@@ -2,6 +2,8 @@ Archive member included because of file (symbol)
 
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(exit.o)
                               C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_start.o (exit)
+C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+                              ./proto/pb_decode.o (memcpy)
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memset.o)
                               C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_start.o (memset)
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(__filll_mem.o)
@@ -57,11 +59,22 @@ Discarded input sections
  .group         0x00000000        0x8 ./src/main.o
  .group         0x00000000        0x8 ./src/main.o
  .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
  .bss.idle_counter
                 0x00000000        0x4 ./src/main.o
+ .text.mainContent
+                0x00000000       0xd4 ./src/main.o
  .group         0x00000000        0x8 ./src/clocks_and_modes.o
  .group         0x00000000        0x8 ./src/clocks_and_modes.o
  .group         0x00000000        0x8 ./src/clocks_and_modes.o
@@ -93,6 +106,51 @@ Discarded input sections
  .debug_macro   0x00000000       0x28 ./src/clocks_and_modes.o
  .debug_macro   0x00000000       0x58 ./src/clocks_and_modes.o
  .debug_macro   0x00000000     0xdf8d ./src/clocks_and_modes.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .group         0x00000000        0x8 ./src/ProtoBuff.o
+ .text          0x00000000        0x0 ./src/ProtoBuff.o
+ .data          0x00000000        0x0 ./src/ProtoBuff.o
+ .bss           0x00000000        0x0 ./src/ProtoBuff.o
+ .text.ProtoBuff_init
+                0x00000000        0xc ./src/ProtoBuff.o
+ .debug_info    0x00000000       0x88 ./src/ProtoBuff.o
+ .debug_abbrev  0x00000000       0x45 ./src/ProtoBuff.o
+ .debug_aranges
+                0x00000000       0x20 ./src/ProtoBuff.o
+ .debug_ranges  0x00000000       0x10 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0xba ./src/ProtoBuff.o
+ .debug_macro   0x00000000      0x868 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x52 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0xa0 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x16 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x19 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x64 ./src/ProtoBuff.o
+ .debug_macro   0x00000000      0x185 ./src/ProtoBuff.o
+ .debug_macro   0x00000000      0x140 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x9d ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x10 ./src/ProtoBuff.o
+ .debug_macro   0x00000000      0x15b ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x28 ./src/ProtoBuff.o
+ .debug_macro   0x00000000       0x58 ./src/ProtoBuff.o
+ .debug_macro   0x00000000     0xdf8d ./src/ProtoBuff.o
+ .debug_line    0x00000000      0x1d9 ./src/ProtoBuff.o
+ .debug_str     0x00000000    0x5dc66 ./src/ProtoBuff.o
+ .comment       0x00000000       0x71 ./src/ProtoBuff.o
+ .debug_frame   0x00000000       0x30 ./src/ProtoBuff.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/ProtoBuff.o
  .group         0x00000000        0x8 ./src/LPUART.o
  .group         0x00000000        0x8 ./src/LPUART.o
  .group         0x00000000        0x8 ./src/LPUART.o
@@ -164,8 +222,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 ./src/LPSPI.o
  .debug_macro   0x00000000     0xdf8d ./src/LPSPI.o
  .debug_macro   0x00000000       0x10 ./src/LPSPI.o
- .debug_line    0x00000000      0x1c6 ./src/LPSPI.o
- .debug_str     0x00000000    0x5dc5c ./src/LPSPI.o
+ .debug_line    0x00000000      0x1c2 ./src/LPSPI.o
+ .debug_str     0x00000000    0x5dc58 ./src/LPSPI.o
  .comment       0x00000000       0x71 ./src/LPSPI.o
  .ARM.attributes
                 0x00000000       0x33 ./src/LPSPI.o
@@ -187,6 +245,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/FlexCAN.o
  .data          0x00000000        0x0 ./src/FlexCAN.o
  .bss           0x00000000        0x0 ./src/FlexCAN.o
+ .text.FLEXCAN0_transmit_msg
+                0x00000000       0xd0 ./src/FlexCAN.o
  .debug_macro   0x00000000      0x868 ./src/FlexCAN.o
  .debug_macro   0x00000000       0x52 ./src/FlexCAN.o
  .debug_macro   0x00000000       0xa0 ./src/FlexCAN.o
@@ -202,6 +262,278 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 ./src/FlexCAN.o
  .debug_macro   0x00000000     0xdf8d ./src/FlexCAN.o
  .debug_macro   0x00000000       0x10 ./src/FlexCAN.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/simpleNano.pb.o
+ .text          0x00000000        0x0 ./proto/simpleNano.pb.o
+ .data          0x00000000        0x0 ./proto/simpleNano.pb.o
+ .bss           0x00000000        0x0 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000      0x868 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x52 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0xa0 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x16 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x10 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x64 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000      0x185 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000      0x140 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x9d ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x10 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000      0x15b ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x28 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x58 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x16 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x16 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x16 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x22 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x10 ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000      0x27a ./proto/simpleNano.pb.o
+ .debug_macro   0x00000000       0x22 ./proto/simpleNano.pb.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_encode.o
+ .text          0x00000000        0x0 ./proto/pb_encode.o
+ .data          0x00000000        0x0 ./proto/pb_encode.o
+ .bss           0x00000000        0x0 ./proto/pb_encode.o
+ .text.pb_encode_delimited
+                0x00000000       0x20 ./proto/pb_encode.o
+ .text.pb_encode_nullterminated
+                0x00000000       0x44 ./proto/pb_encode.o
+ .text.pb_get_encoded_size
+                0x00000000       0x50 ./proto/pb_encode.o
+ .debug_macro   0x00000000      0x868 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x52 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0xa0 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x64 ./proto/pb_encode.o
+ .debug_macro   0x00000000      0x185 ./proto/pb_encode.o
+ .debug_macro   0x00000000      0x140 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x9d ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_encode.o
+ .debug_macro   0x00000000      0x15b ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x28 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x58 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x22 ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_encode.o
+ .debug_macro   0x00000000      0x27a ./proto/pb_encode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_encode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_decode.o
+ .text          0x00000000        0x0 ./proto/pb_decode.o
+ .data          0x00000000        0x0 ./proto/pb_decode.o
+ .bss           0x00000000        0x0 ./proto/pb_decode.o
+ .rodata.PB_DECODERS
+                0x00000000       0x28 ./proto/pb_decode.o
+ .text.buf_read
+                0x00000000       0x58 ./proto/pb_decode.o
+ .rodata        0x00000000      0x172 ./proto/pb_decode.o
+ .text.pb_read  0x00000000       0xd0 ./proto/pb_decode.o
+ .text.pb_readbyte
+                0x00000000       0x78 ./proto/pb_decode.o
+ .text.pb_istream_from_buffer
+                0x00000000       0x3c ./proto/pb_decode.o
+ .text.pb_decode_varint32_eof
+                0x00000000      0x118 ./proto/pb_decode.o
+ .text.pb_decode_varint32
+                0x00000000       0x20 ./proto/pb_decode.o
+ .text.pb_decode_varint
+                0x00000000       0xc4 ./proto/pb_decode.o
+ .text.pb_skip_varint
+                0x00000000       0x3c ./proto/pb_decode.o
+ .text.pb_skip_string
+                0x00000000       0x3c ./proto/pb_decode.o
+ .text.pb_decode_tag
+                0x00000000       0x70 ./proto/pb_decode.o
+ .text.pb_skip_field
+                0x00000000       0x84 ./proto/pb_decode.o
+ .text.read_raw_value
+                0x00000000       0xbc ./proto/pb_decode.o
+ .text.pb_make_string_substream
+                0x00000000       0x74 ./proto/pb_decode.o
+ .text.pb_close_string_substream
+                0x00000000       0x4c ./proto/pb_decode.o
+ .text.decode_static_field
+                0x00000000      0x238 ./proto/pb_decode.o
+ .text.decode_pointer_field
+                0x00000000       0x34 ./proto/pb_decode.o
+ .text.decode_callback_field
+                0x00000000      0x11c ./proto/pb_decode.o
+ .text.decode_field
+                0x00000000       0x78 ./proto/pb_decode.o
+ .text.iter_from_extension
+                0x00000000       0x4c ./proto/pb_decode.o
+ .text.default_extension_decoder
+                0x00000000       0x54 ./proto/pb_decode.o
+ .text.decode_extension
+                0x00000000       0x80 ./proto/pb_decode.o
+ .text.find_extension_field
+                0x00000000       0x3c ./proto/pb_decode.o
+ .text.pb_field_set_to_default
+                0x00000000      0x154 ./proto/pb_decode.o
+ .text.pb_message_set_to_defaults
+                0x00000000       0x44 ./proto/pb_decode.o
+ .text.pb_decode_noinit
+                0x00000000      0x2c4 ./proto/pb_decode.o
+ .text.pb_decode
+                0x00000000       0x2c ./proto/pb_decode.o
+ .text.pb_decode_delimited_noinit
+                0x00000000       0x64 ./proto/pb_decode.o
+ .text.pb_decode_delimited
+                0x00000000       0x64 ./proto/pb_decode.o
+ .text.pb_decode_nullterminated
+                0x00000000       0x20 ./proto/pb_decode.o
+ .text.pb_decode_svarint
+                0x00000000       0x74 ./proto/pb_decode.o
+ .text.pb_decode_fixed32
+                0x00000000       0x4c ./proto/pb_decode.o
+ .text.pb_decode_fixed64
+                0x00000000      0x124 ./proto/pb_decode.o
+ .text.pb_dec_varint
+                0x00000000      0x118 ./proto/pb_decode.o
+ .text.pb_dec_uvarint
+                0x00000000       0xfc ./proto/pb_decode.o
+ .text.pb_dec_svarint
+                0x00000000       0xfc ./proto/pb_decode.o
+ .text.pb_dec_fixed32
+                0x00000000       0x20 ./proto/pb_decode.o
+ .text.pb_dec_fixed64
+                0x00000000       0x20 ./proto/pb_decode.o
+ .text.pb_dec_bytes
+                0x00000000       0xe8 ./proto/pb_decode.o
+ .text.pb_dec_string
+                0x00000000       0xc8 ./proto/pb_decode.o
+ .text.pb_dec_submessage
+                0x00000000       0xb4 ./proto/pb_decode.o
+ .text.pb_dec_fixed_length_bytes
+                0x00000000       0xa4 ./proto/pb_decode.o
+ .debug_info    0x00000000     0x15a4 ./proto/pb_decode.o
+ .debug_abbrev  0x00000000      0x294 ./proto/pb_decode.o
+ .debug_aranges
+                0x00000000      0x160 ./proto/pb_decode.o
+ .debug_ranges  0x00000000      0x150 ./proto/pb_decode.o
+ .debug_macro   0x00000000      0x132 ./proto/pb_decode.o
+ .debug_macro   0x00000000      0x868 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x52 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0xa0 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x64 ./proto/pb_decode.o
+ .debug_macro   0x00000000      0x185 ./proto/pb_decode.o
+ .debug_macro   0x00000000      0x140 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x9d ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_decode.o
+ .debug_macro   0x00000000      0x15b ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x28 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x58 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x22 ./proto/pb_decode.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_decode.o
+ .debug_macro   0x00000000      0x27a ./proto/pb_decode.o
+ .debug_line    0x00000000      0xa12 ./proto/pb_decode.o
+ .debug_str     0x00000000     0x621d ./proto/pb_decode.o
+ .comment       0x00000000       0x71 ./proto/pb_decode.o
+ .debug_frame   0x00000000      0x608 ./proto/pb_decode.o
+ .ARM.attributes
+                0x00000000       0x33 ./proto/pb_decode.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .group         0x00000000        0x8 ./proto/pb_common.o
+ .text          0x00000000        0x0 ./proto/pb_common.o
+ .data          0x00000000        0x0 ./proto/pb_common.o
+ .bss           0x00000000        0x0 ./proto/pb_common.o
+ .text.pb_field_iter_find
+                0x00000000       0x4c ./proto/pb_common.o
+ .debug_macro   0x00000000      0x868 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x52 ./proto/pb_common.o
+ .debug_macro   0x00000000       0xa0 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x64 ./proto/pb_common.o
+ .debug_macro   0x00000000      0x185 ./proto/pb_common.o
+ .debug_macro   0x00000000      0x140 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x9d ./proto/pb_common.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_common.o
+ .debug_macro   0x00000000      0x15b ./proto/pb_common.o
+ .debug_macro   0x00000000       0x28 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x58 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x16 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x22 ./proto/pb_common.o
+ .debug_macro   0x00000000       0x10 ./proto/pb_common.o
+ .debug_macro   0x00000000      0x27a ./proto/pb_common.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/system_S32K144.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/system_S32K144.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/system_S32K144.o
@@ -246,6 +578,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x28 ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_macro   0x00000000       0x58 ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_macro   0x00000000     0xdf8d ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_macro   0x00000000       0x22 ./Project_Settings/Startup_Code/system_S32K144.o
  .data          0x00000000        0x0 ./Project_Settings/Startup_Code/startup_S32K144.o
  .bss           0x00000000        0x0 ./Project_Settings/Startup_Code/startup_S32K144.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/startup.o
@@ -307,6 +640,21 @@ Discarded input sections
  .debug_frame   0x00000000       0x3c C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(exit.o)
  .ARM.attributes
                 0x00000000       0x33 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(exit.o)
+ .text          0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .data          0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .bss           0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .text.memcpy   0x00000000       0x16 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_info    0x00000000      0x111 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_abbrev  0x00000000       0x95 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_loc     0x00000000       0x77 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_aranges
+                0x00000000       0x20 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_line    0x00000000       0x88 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_str     0x00000000      0x217 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .comment       0x00000000       0x71 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .debug_frame   0x00000000       0x28 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
+ .ARM.attributes
+                0x00000000       0x33 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memcpy.o)
  .text          0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memset.o)
  .data          0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memset.o)
  .bss           0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m\libc99.a(memset.o)
@@ -447,9 +795,14 @@ Linker script and memory map
 LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_start.o
 LOAD ./src/main.o
 LOAD ./src/clocks_and_modes.o
+LOAD ./src/ProtoBuff.o
 LOAD ./src/LPUART.o
 LOAD ./src/LPSPI.o
 LOAD ./src/FlexCAN.o
+LOAD ./proto/simpleNano.pb.o
+LOAD ./proto/pb_encode.o
+LOAD ./proto/pb_decode.o
+LOAD ./proto/pb_common.o
 LOAD ./Project_Settings/Startup_Code/system_S32K144.o
 LOAD ./Project_Settings/Startup_Code/startup_S32K144.o
 LOAD ./Project_Settings/Startup_Code/startup.o
@@ -479,7 +832,7 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
  .FlashConfig   0x00000400       0x10 ./Project_Settings/Startup_Code/startup_S32K144.o
                 0x00000410                . = ALIGN (0x4)
 
-.text           0x00000410      0x9ec
+.text           0x00000410     0x1b70
                 0x00000410                . = ALIGN (0x4)
  *(.text)
  .text          0x00000410       0x44 ./Project_Settings/Startup_Code/startup_S32K144.o
@@ -629,57 +982,135 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
  .text.LPIT0_init
                 0x00000554       0x4c ./src/main.o
                 0x00000554                LPIT0_init
- .text.mainContent
-                0x000005a0       0xd4 ./src/main.o
-                0x000005a0                mainContent
- .text.main     0x00000674       0x58 ./src/main.o
-                0x00000674                main
+ .text.main     0x000005a0       0xa8 ./src/main.o
+                0x000005a0                main
  .text.LPIT0_Ch0_IRQHandler
-                0x000006cc       0x4c ./src/main.o
-                0x000006cc                LPIT0_Ch0_IRQHandler
+                0x00000648       0x4c ./src/main.o
+                0x00000648                LPIT0_Ch0_IRQHandler
  .text.SOSC_init_8MHz
-                0x00000718       0x4c ./src/clocks_and_modes.o
-                0x00000718                SOSC_init_8MHz
+                0x00000694       0x4c ./src/clocks_and_modes.o
+                0x00000694                SOSC_init_8MHz
  .text.SPLL_init_160MHz
-                0x00000764       0x64 ./src/clocks_and_modes.o
-                0x00000764                SPLL_init_160MHz
+                0x000006e0       0x64 ./src/clocks_and_modes.o
+                0x000006e0                SPLL_init_160MHz
  .text.NormalRUNmode_80MHz
-                0x000007c8       0x2c ./src/clocks_and_modes.o
-                0x000007c8                NormalRUNmode_80MHz
+                0x00000744       0x2c ./src/clocks_and_modes.o
+                0x00000744                NormalRUNmode_80MHz
  .text.LPUART1_init
-                0x000007f4       0x48 ./src/LPUART.o
-                0x000007f4                LPUART1_init
+                0x00000770       0x48 ./src/LPUART.o
+                0x00000770                LPUART1_init
  .text.LPUART1_transmit_char
-                0x0000083c       0x30 ./src/LPUART.o
-                0x0000083c                LPUART1_transmit_char
+                0x000007b8       0x30 ./src/LPUART.o
+                0x000007b8                LPUART1_transmit_char
  .text.LPUART1_transmit_string
-                0x0000086c       0x34 ./src/LPUART.o
-                0x0000086c                LPUART1_transmit_string
+                0x000007e8       0x34 ./src/LPUART.o
+                0x000007e8                LPUART1_transmit_string
  .text.LPUART1_receive_char
-                0x000008a0       0x30 ./src/LPUART.o
-                0x000008a0                LPUART1_receive_char
+                0x0000081c       0x30 ./src/LPUART.o
+                0x0000081c                LPUART1_receive_char
  .text.FLEXCAN0_init
-                0x000008d0       0xe8 ./src/FlexCAN.o
-                0x000008d0                FLEXCAN0_init
- .text.FLEXCAN0_transmit_msg
-                0x000009b8       0xd8 ./src/FlexCAN.o
-                0x000009b8                FLEXCAN0_transmit_msg
+                0x0000084c       0xe8 ./src/FlexCAN.o
+                0x0000084c                FLEXCAN0_init
  .text.FLEXCAN0_receive_msg
-                0x00000a90      0x144 ./src/FlexCAN.o
-                0x00000a90                FLEXCAN0_receive_msg
+                0x00000934      0x194 ./src/FlexCAN.o
+                0x00000934                FLEXCAN0_receive_msg
  .text.clearRXDATA
-                0x00000bd4       0x2c ./src/FlexCAN.o
-                0x00000bd4                clearRXDATA
+                0x00000ac8       0x2c ./src/FlexCAN.o
+                0x00000ac8                clearRXDATA
+ .text.buf_write
+                0x00000af4       0x50 ./proto/pb_encode.o
+ .text.pb_ostream_from_buffer
+                0x00000b44       0x40 ./proto/pb_encode.o
+                0x00000b44                pb_ostream_from_buffer
+ .text.pb_write
+                0x00000b84       0x8c ./proto/pb_encode.o
+                0x00000b84                pb_write
+ .text.encode_array
+                0x00000c10      0x210 ./proto/pb_encode.o
+ .text.pb_check_proto3_default_value
+                0x00000e20      0x1a0 ./proto/pb_encode.o
+ .text.encode_basic_field
+                0x00000fc0      0x1e4 ./proto/pb_encode.o
+ .text.encode_callback_field
+                0x000011a4       0x5c ./proto/pb_encode.o
+ .text.encode_field
+                0x00001200       0x60 ./proto/pb_encode.o
+ .text.default_extension_encoder
+                0x00001260       0x48 ./proto/pb_encode.o
+ .text.encode_extension_field
+                0x000012a8       0x64 ./proto/pb_encode.o
+ .text.pb_const_cast
+                0x0000130c       0x1c ./proto/pb_encode.o
+ .text.pb_encode
+                0x00001328       0x94 ./proto/pb_encode.o
+                0x00001328                pb_encode
+ .text.pb_encode_varint
+                0x000013bc       0xa0 ./proto/pb_encode.o
+                0x000013bc                pb_encode_varint
+ .text.pb_encode_svarint
+                0x0000145c       0x54 ./proto/pb_encode.o
+                0x0000145c                pb_encode_svarint
+ .text.pb_encode_fixed32
+                0x000014b0       0x48 ./proto/pb_encode.o
+                0x000014b0                pb_encode_fixed32
+ .text.pb_encode_fixed64
+                0x000014f8       0xc4 ./proto/pb_encode.o
+                0x000014f8                pb_encode_fixed64
+ .text.pb_encode_tag
+                0x000015bc       0x44 ./proto/pb_encode.o
+                0x000015bc                pb_encode_tag
+ .text.pb_encode_tag_for_field
+                0x00001600       0x94 ./proto/pb_encode.o
+                0x00001600                pb_encode_tag_for_field
+ .text.pb_encode_string
+                0x00001694       0x40 ./proto/pb_encode.o
+                0x00001694                pb_encode_string
+ .text.pb_encode_submessage
+                0x000016d4      0x11c ./proto/pb_encode.o
+                0x000016d4                pb_encode_submessage
+ .text.pb_enc_varint
+                0x000017f0       0xa4 ./proto/pb_encode.o
+ .text.pb_enc_uvarint
+                0x00001894       0xa4 ./proto/pb_encode.o
+ .text.pb_enc_svarint
+                0x00001938       0xa4 ./proto/pb_encode.o
+ .text.pb_enc_fixed64
+                0x000019dc       0x20 ./proto/pb_encode.o
+ .text.pb_enc_fixed32
+                0x000019fc       0x20 ./proto/pb_encode.o
+ .text.pb_enc_bytes
+                0x00001a1c       0x7c ./proto/pb_encode.o
+ .text.pb_enc_string
+                0x00001a98       0x6c ./proto/pb_encode.o
+ .text.pb_enc_submessage
+                0x00001b04       0x4c ./proto/pb_encode.o
+ .text.pb_enc_fixed_length_bytes
+                0x00001b50       0x24 ./proto/pb_encode.o
+ .text.pb_field_iter_begin
+                0x00001b74       0x64 ./proto/pb_common.o
+                0x00001b74                pb_field_iter_begin
+ .text.pb_field_iter_next
+                0x00001bd8       0xf4 ./proto/pb_common.o
+                0x00001bd8                pb_field_iter_next
  .text.SystemInit
-                0x00000c00       0x30 ./Project_Settings/Startup_Code/system_S32K144.o
-                0x00000c00                SystemInit
+                0x00001ccc       0x30 ./Project_Settings/Startup_Code/system_S32K144.o
+                0x00001ccc                SystemInit
  .text.init_data_bss
-                0x00000c30       0xf4 ./Project_Settings/Startup_Code/startup.o
-                0x00000c30                init_data_bss
+                0x00001cfc       0xf4 ./Project_Settings/Startup_Code/startup.o
+                0x00001cfc                init_data_bss
  *(.rodata)
- .rodata        0x00000d24       0x80 ./src/main.o
- .rodata        0x00000da4       0x58 ./src/FlexCAN.o
+ .rodata        0x00001df0       0x27 ./src/main.o
+ *fill*         0x00001e17        0x1 
+ .rodata        0x00001e18       0x5c ./src/FlexCAN.o
+ .rodata        0x00001e74       0xc1 ./proto/pb_encode.o
  *(.rodata*)
+ *fill*         0x00001f35        0x3 
+ .rodata.nanoPB_simpleNano_fields
+                0x00001f38       0x1e ./proto/simpleNano.pb.o
+                0x00001f38                nanoPB_simpleNano_fields
+ *fill*         0x00001f56        0x2 
+ .rodata.PB_ENCODERS
+                0x00001f58       0x28 ./proto/pb_encode.o
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
@@ -687,64 +1118,64 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
  *(.eh_frame)
  *(.init)
  *(.fini)
-                0x00000dfc                . = ALIGN (0x4)
+                0x00001f80                . = ALIGN (0x4)
 
-.vfp11_veneer   0x00000dfc        0x0
+.vfp11_veneer   0x00001f80        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00000dfc        0x0
+.v4_bx          0x00001f80        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00000dfc        0x0
+.iplt           0x00001f80        0x0
  .iplt          0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_start.o
 
-.rel.dyn        0x00000dfc        0x0
+.rel.dyn        0x00001f80        0x0
  .rel.iplt      0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_start.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00000dfc        0x0
-                0x00000dfc                __exidx_start = .
+.ARM            0x00001f80        0x0
+                0x00001f80                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000dfc                __exidx_end = .
+                0x00001f80                __exidx_end = .
 
-.ctors          0x00000dfc        0x0
-                0x00000dfc                __CTOR_LIST__ = .
+.ctors          0x00001f80        0x0
+                0x00001f80                __CTOR_LIST__ = .
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x00000dfc                __CTOR_END__ = .
+                0x00001f80                __CTOR_END__ = .
 
-.dtors          0x00000dfc        0x0
-                0x00000dfc                __DTOR_LIST__ = .
+.dtors          0x00001f80        0x0
+                0x00001f80                __DTOR_LIST__ = .
  *crtbegin.o(.dtors)
  *crtbegin?.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x00000dfc                __DTOR_END__ = .
+                0x00001f80                __DTOR_END__ = .
 
-.preinit_array  0x00000dfc        0x0
-                0x00000dfc                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x00001f80        0x0
+                0x00001f80                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x00000dfc                PROVIDE (__preinit_array_end, .)
+                0x00001f80                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x00000dfc        0x0
-                0x00000dfc                PROVIDE (__init_array_start, .)
+.init_array     0x00001f80        0x0
+                0x00001f80                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
-                0x00000dfc                PROVIDE (__init_array_end, .)
+                0x00001f80                PROVIDE (__init_array_end, .)
 
-.fini_array     0x00000dfc        0x0
-                0x00000dfc                PROVIDE (__fini_array_start, .)
+.fini_array     0x00001f80        0x0
+                0x00001f80                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
-                0x00000dfc                PROVIDE (__fini_array_end, .)
-                0x00000dfc                __etext = .
-                0x00000dfc                __DATA_ROM = .
+                0x00001f80                PROVIDE (__fini_array_end, .)
+                0x00001f80                __etext = .
+                0x00001f80                __DATA_ROM = .
 
 .interrupts_ram
                 0x1fff8000      0x400
@@ -759,7 +1190,7 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
                 0x1fff8000                __VECTOR_RAM = DEFINED (__flash_vector_table__)?ORIGIN (m_interrupts):__VECTOR_RAM__
                 0x00000400                __RAM_VECTOR_TABLE_SIZE = DEFINED (__flash_vector_table__)?0x0:(__interrupts_ram_end__ - __interrupts_ram_start__)
 
-.data           0x1fff8400        0x0 load address 0x00000dfc
+.data           0x1fff8400        0x0 load address 0x00001f80
                 0x1fff8400                . = ALIGN (0x4)
                 0x1fff8400                __DATA_RAM = .
                 0x1fff8400                __data_start__ = .
@@ -768,25 +1199,25 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
  *(.jcr*)
                 0x1fff8400                . = ALIGN (0x4)
                 0x1fff8400                __data_end__ = .
-                0x00000dfc                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
-                0x00000dfc                __CODE_ROM = __DATA_END
+                0x00001f80                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+                0x00001f80                __CODE_ROM = __DATA_END
 
 .igot.plt       0x1fff8400        0x0
  .igot.plt      0x00000000        0x0 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_start.o
 
-.code           0x1fff8400        0x0 load address 0x00000dfc
+.code           0x1fff8400        0x0 load address 0x00001f80
                 0x1fff8400                . = ALIGN (0x4)
                 0x1fff8400                __CODE_RAM = .
                 0x1fff8400                __code_start__ = .
  *(.code_ram)
                 0x1fff8400                . = ALIGN (0x4)
                 0x1fff8400                __code_end__ = .
-                0x00000dfc                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
+                0x00001f80                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
 
 .customSectionBlock
  *(.customSection)
 
-.bss            0x20000000       0x20
+.bss            0x20000000       0x24
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                __BSS_START = .
                 0x20000000                __bss_start__ = .
@@ -795,35 +1226,40 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
  .bss.lpit0_ch0_flag_counter
                 0x20000000        0x4 ./src/main.o
                 0x20000000                lpit0_ch0_flag_counter
- .bss.state     0x20000004        0x4 ./src/FlexCAN.o
-                0x20000004                state
+ .bss.endStatus
+                0x20000004        0x4 ./src/FlexCAN.o
+                0x20000004                endStatus
+ .bss.messageDisplayed
+                0x20000008        0x4 ./src/FlexCAN.o
+                0x20000008                messageDisplayed
  *(COMMON)
- COMMON         0x20000008       0x18 ./src/FlexCAN.o
-                0x20000008                RxDATA
-                0x20000010                RxID
-                0x20000014                RxLENGTH
-                0x20000018                RxCODE
-                0x2000001c                RxTIMESTAMP
-                0x20000020                . = ALIGN (0x4)
-                0x20000020                __bss_end__ = .
-                0x20000020                __BSS_END = .
+ COMMON         0x2000000c       0x18 ./src/FlexCAN.o
+                0x2000000c                RxDATA
+                0x20000014                RxID
+                0x20000018                RxLENGTH
+                0x2000001c                RxCODE
+                0x20000020                RxTIMESTAMP
+                0x20000024                . = ALIGN (0x4)
+                0x20000024                __bss_end__ = .
+                0x20000024                __BSS_END = .
 
-.heap           0x20000020      0x400
-                0x20000020                . = ALIGN (0x8)
-                0x20000020                __end__ = .
-                0x20000020                PROVIDE (end, .)
-                0x20000020                PROVIDE (_end, .)
-                0x20000020                PROVIDE (__end, .)
-                0x20000020                __HeapBase = .
-                0x20000420                . = (. + HEAP_SIZE)
- *fill*         0x20000020      0x400 
-                0x20000420                __HeapLimit = .
-                0x20000420                __heap_limit = .
+.heap           0x20000024      0x404
+                0x20000028                . = ALIGN (0x8)
+ *fill*         0x20000024        0x4 
+                0x20000028                __end__ = .
+                0x20000028                PROVIDE (end, .)
+                0x20000028                PROVIDE (_end, .)
+                0x20000028                PROVIDE (__end, .)
+                0x20000028                __HeapBase = .
+                0x20000428                . = (. + HEAP_SIZE)
+ *fill*         0x20000028      0x400 
+                0x20000428                __HeapLimit = .
+                0x20000428                __heap_limit = .
 
-.stack          0x20000420      0x400
-                0x20000420                . = ALIGN (0x8)
-                0x20000820                . = (. + STACK_SIZE)
- *fill*         0x20000420      0x400 
+.stack          0x20000428      0x400
+                0x20000428                . = ALIGN (0x8)
+                0x20000828                . = (. + STACK_SIZE)
+ *fill*         0x20000428      0x400 
                 0x20007000                __StackTop = (ORIGIN (m_data_2) + 0x7000)
                 0x20006c00                __StackLimit = (__StackTop - STACK_SIZE)
                 0x20007000                PROVIDE (__stack, __StackTop)
@@ -840,33 +1276,45 @@ LOAD C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/lib/armv7e-m/__arm_end.o
  .ARM.attributes
                 0x00000099       0x33 ./src/FlexCAN.o
  .ARM.attributes
-                0x000000cc       0x33 ./Project_Settings/Startup_Code/system_S32K144.o
+                0x000000cc       0x33 ./proto/simpleNano.pb.o
  .ARM.attributes
-                0x000000ff       0x1b ./Project_Settings/Startup_Code/startup_S32K144.o
+                0x000000ff       0x33 ./proto/pb_encode.o
  .ARM.attributes
-                0x0000011a       0x33 ./Project_Settings/Startup_Code/startup.o
+                0x00000132       0x33 ./proto/pb_common.o
+ .ARM.attributes
+                0x00000165       0x33 ./Project_Settings/Startup_Code/system_S32K144.o
+ .ARM.attributes
+                0x00000198       0x1b ./Project_Settings/Startup_Code/startup_S32K144.o
+ .ARM.attributes
+                0x000001b3       0x33 ./Project_Settings/Startup_Code/startup.o
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data_2 overflowed with stack and heap)
 OUTPUT(NIBBA.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x1c48
- .debug_info    0x00000000      0x880 ./src/main.o
- .debug_info    0x00000880      0x269 ./src/clocks_and_modes.o
- .debug_info    0x00000ae9      0x231 ./src/LPUART.o
- .debug_info    0x00000d1a      0x5a8 ./src/FlexCAN.o
- .debug_info    0x000012c2      0x500 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_info    0x000017c2       0x9b ./Project_Settings/Startup_Code/startup_S32K144.o
- .debug_info    0x0000185d      0x3eb ./Project_Settings/Startup_Code/startup.o
+.debug_info     0x00000000     0x333e
+ .debug_info    0x00000000      0xa78 ./src/main.o
+ .debug_info    0x00000a78      0x269 ./src/clocks_and_modes.o
+ .debug_info    0x00000ce1      0x231 ./src/LPUART.o
+ .debug_info    0x00000f12      0x5de ./src/FlexCAN.o
+ .debug_info    0x000014f0      0x18f ./proto/simpleNano.pb.o
+ .debug_info    0x0000167f     0x10b3 ./proto/pb_encode.o
+ .debug_info    0x00002732      0x28a ./proto/pb_common.o
+ .debug_info    0x000029bc      0x500 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_info    0x00002ebc       0x97 ./Project_Settings/Startup_Code/startup_S32K144.o
+ .debug_info    0x00002f53      0x3eb ./Project_Settings/Startup_Code/startup.o
 
-.debug_abbrev   0x00000000      0x724
- .debug_abbrev  0x00000000      0x171 ./src/main.o
- .debug_abbrev  0x00000171       0xc2 ./src/clocks_and_modes.o
- .debug_abbrev  0x00000233      0x146 ./src/LPUART.o
- .debug_abbrev  0x00000379      0x17e ./src/FlexCAN.o
- .debug_abbrev  0x000004f7      0x118 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_abbrev  0x0000060f       0x14 ./Project_Settings/Startup_Code/startup_S32K144.o
- .debug_abbrev  0x00000623      0x101 ./Project_Settings/Startup_Code/startup.o
+.debug_abbrev   0x00000000      0xb96
+ .debug_abbrev  0x00000000      0x1e1 ./src/main.o
+ .debug_abbrev  0x000001e1       0xc2 ./src/clocks_and_modes.o
+ .debug_abbrev  0x000002a3      0x146 ./src/LPUART.o
+ .debug_abbrev  0x000003e9      0x16b ./src/FlexCAN.o
+ .debug_abbrev  0x00000554       0x9b ./proto/simpleNano.pb.o
+ .debug_abbrev  0x000005ef      0x26f ./proto/pb_encode.o
+ .debug_abbrev  0x0000085e      0x10b ./proto/pb_common.o
+ .debug_abbrev  0x00000969      0x118 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_abbrev  0x00000a81       0x14 ./Project_Settings/Startup_Code/startup_S32K144.o
+ .debug_abbrev  0x00000a95      0x101 ./Project_Settings/Startup_Code/startup.o
 
-.debug_aranges  0x00000000      0x168
+.debug_aranges  0x00000000      0x2c8
  .debug_aranges
                 0x00000000       0x50 ./src/main.o
  .debug_aranges
@@ -876,70 +1324,98 @@ OUTPUT(NIBBA.elf elf32-littlearm)
  .debug_aranges
                 0x000000c0       0x38 ./src/FlexCAN.o
  .debug_aranges
-                0x000000f8       0x30 ./Project_Settings/Startup_Code/system_S32K144.o
+                0x000000f8       0x18 ./proto/simpleNano.pb.o
  .debug_aranges
-                0x00000128       0x20 ./Project_Settings/Startup_Code/startup_S32K144.o
+                0x00000110      0x118 ./proto/pb_encode.o
  .debug_aranges
-                0x00000148       0x20 ./Project_Settings/Startup_Code/startup.o
+                0x00000228       0x30 ./proto/pb_common.o
+ .debug_aranges
+                0x00000258       0x30 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_aranges
+                0x00000288       0x20 ./Project_Settings/Startup_Code/startup_S32K144.o
+ .debug_aranges
+                0x000002a8       0x20 ./Project_Settings/Startup_Code/startup.o
 
-.debug_ranges   0x00000000       0xe8
+.debug_ranges   0x00000000      0x210
  .debug_ranges  0x00000000       0x40 ./src/main.o
  .debug_ranges  0x00000040       0x20 ./src/clocks_and_modes.o
  .debug_ranges  0x00000060       0x30 ./src/LPUART.o
  .debug_ranges  0x00000090       0x28 ./src/FlexCAN.o
- .debug_ranges  0x000000b8       0x20 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_ranges  0x000000d8       0x10 ./Project_Settings/Startup_Code/startup.o
+ .debug_ranges  0x000000b8      0x108 ./proto/pb_encode.o
+ .debug_ranges  0x000001c0       0x20 ./proto/pb_common.o
+ .debug_ranges  0x000001e0       0x20 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_ranges  0x00000200       0x10 ./Project_Settings/Startup_Code/startup.o
 
-.debug_macro    0x00000000     0xfdbb
- .debug_macro   0x00000000       0xc3 ./src/main.o
- .debug_macro   0x000000c3      0x868 ./src/main.o
- .debug_macro   0x0000092b       0x52 ./src/main.o
- .debug_macro   0x0000097d       0xa0 ./src/main.o
- .debug_macro   0x00000a1d       0x16 ./src/main.o
- .debug_macro   0x00000a33       0x19 ./src/main.o
- .debug_macro   0x00000a4c       0x64 ./src/main.o
- .debug_macro   0x00000ab0      0x185 ./src/main.o
- .debug_macro   0x00000c35      0x140 ./src/main.o
- .debug_macro   0x00000d75       0x9d ./src/main.o
- .debug_macro   0x00000e12       0x10 ./src/main.o
- .debug_macro   0x00000e22      0x15b ./src/main.o
- .debug_macro   0x00000f7d       0x28 ./src/main.o
- .debug_macro   0x00000fa5       0x58 ./src/main.o
- .debug_macro   0x00000ffd     0xdf8d ./src/main.o
- .debug_macro   0x0000ef8a       0x10 ./src/main.o
- .debug_macro   0x0000ef9a       0xb0 ./src/clocks_and_modes.o
- .debug_macro   0x0000f04a       0xb0 ./src/LPUART.o
- .debug_macro   0x0000f0fa       0xb5 ./src/FlexCAN.o
- .debug_macro   0x0000f1af       0xe9 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x0000f298       0x10 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x0000f2a8       0x6d ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x0000f315      0x978 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x0000fc8d       0x22 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x0000fcaf       0x22 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x0000fcd1       0xea ./Project_Settings/Startup_Code/startup.o
+.debug_macro    0x00000000    0x104c2
+ .debug_macro   0x00000000      0x15a ./src/main.o
+ .debug_macro   0x0000015a      0x868 ./src/main.o
+ .debug_macro   0x000009c2       0x52 ./src/main.o
+ .debug_macro   0x00000a14       0xa0 ./src/main.o
+ .debug_macro   0x00000ab4       0x16 ./src/main.o
+ .debug_macro   0x00000aca       0x19 ./src/main.o
+ .debug_macro   0x00000ae3       0x64 ./src/main.o
+ .debug_macro   0x00000b47      0x185 ./src/main.o
+ .debug_macro   0x00000ccc      0x140 ./src/main.o
+ .debug_macro   0x00000e0c       0x9d ./src/main.o
+ .debug_macro   0x00000ea9       0x10 ./src/main.o
+ .debug_macro   0x00000eb9      0x15b ./src/main.o
+ .debug_macro   0x00001014       0x28 ./src/main.o
+ .debug_macro   0x0000103c       0x58 ./src/main.o
+ .debug_macro   0x00001094     0xdf8d ./src/main.o
+ .debug_macro   0x0000f021       0x10 ./src/main.o
+ .debug_macro   0x0000f031       0x10 ./src/main.o
+ .debug_macro   0x0000f041       0x16 ./src/main.o
+ .debug_macro   0x0000f057       0x16 ./src/main.o
+ .debug_macro   0x0000f06d       0x16 ./src/main.o
+ .debug_macro   0x0000f083       0x22 ./src/main.o
+ .debug_macro   0x0000f0a5       0x10 ./src/main.o
+ .debug_macro   0x0000f0b5      0x27a ./src/main.o
+ .debug_macro   0x0000f32f       0x22 ./src/main.o
+ .debug_macro   0x0000f351       0x10 ./src/main.o
+ .debug_macro   0x0000f361       0xb0 ./src/clocks_and_modes.o
+ .debug_macro   0x0000f411       0xb0 ./src/LPUART.o
+ .debug_macro   0x0000f4c1       0xb5 ./src/FlexCAN.o
+ .debug_macro   0x0000f576      0x11b ./proto/simpleNano.pb.o
+ .debug_macro   0x0000f691      0x131 ./proto/pb_encode.o
+ .debug_macro   0x0000f7c2      0x116 ./proto/pb_common.o
+ .debug_macro   0x0000f8d8       0xe9 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_macro   0x0000f9c1       0x10 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_macro   0x0000f9d1       0x6d ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_macro   0x0000fa3e      0x978 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_macro   0x000103b6       0x22 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_macro   0x000103d8       0xea ./Project_Settings/Startup_Code/startup.o
 
-.debug_line     0x00000000      0xf56
- .debug_line    0x00000000      0x2bc ./src/main.o
- .debug_line    0x000002bc      0x237 ./src/clocks_and_modes.o
- .debug_line    0x000004f3      0x230 ./src/LPUART.o
- .debug_line    0x00000723      0x297 ./src/FlexCAN.o
- .debug_line    0x000009ba      0x2aa ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_line    0x00000c64       0x83 ./Project_Settings/Startup_Code/startup_S32K144.o
- .debug_line    0x00000ce7      0x26f ./Project_Settings/Startup_Code/startup.o
+.debug_line     0x00000000     0x1b97
+ .debug_line    0x00000000      0x3c8 ./src/main.o
+ .debug_line    0x000003c8      0x233 ./src/clocks_and_modes.o
+ .debug_line    0x000005fb      0x22c ./src/LPUART.o
+ .debug_line    0x00000827      0x29f ./src/FlexCAN.o
+ .debug_line    0x00000ac6      0x1f6 ./proto/simpleNano.pb.o
+ .debug_line    0x00000cbc      0x6ea ./proto/pb_encode.o
+ .debug_line    0x000013a6      0x25d ./proto/pb_common.o
+ .debug_line    0x00001603      0x2a6 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_line    0x000018a9       0x83 ./Project_Settings/Startup_Code/startup_S32K144.o
+ .debug_line    0x0000192c      0x26b ./Project_Settings/Startup_Code/startup.o
 
-.debug_str      0x00000000    0x629ea
- .debug_str     0x00000000    0x5dec9 ./src/main.o
-                              0x5df5e (size before relaxing)
- .debug_str     0x0005dec9       0xd1 ./src/clocks_and_modes.o
-                              0x5dd69 (size before relaxing)
- .debug_str     0x0005df9a       0xd2 ./src/LPUART.o
-                              0x5dd3e (size before relaxing)
- .debug_str     0x0005e06c       0x8d ./src/FlexCAN.o
-                              0x5de95 (size before relaxing)
- .debug_str     0x0005e0f9     0x47d1 ./Project_Settings/Startup_Code/system_S32K144.o
-                              0x624f2 (size before relaxing)
- .debug_str     0x000628ca      0x120 ./Project_Settings/Startup_Code/startup.o
-                              0x62429 (size before relaxing)
+.debug_str      0x00000000    0x64b83
+ .debug_str     0x00000000    0x5fb77 ./src/main.o
+                              0x5fc6a (size before relaxing)
+ .debug_str     0x0005fb77       0xd1 ./src/clocks_and_modes.o
+                              0x5dd65 (size before relaxing)
+ .debug_str     0x0005fc48       0xd2 ./src/LPUART.o
+                              0x5dd3a (size before relaxing)
+ .debug_str     0x0005fd1a       0xa2 ./src/FlexCAN.o
+                              0x5dea6 (size before relaxing)
+ .debug_str     0x0005fdbc       0x19 ./proto/simpleNano.pb.o
+                               0x5c47 (size before relaxing)
+ .debug_str     0x0005fdd5      0x4a3 ./proto/pb_encode.o
+                               0x60c3 (size before relaxing)
+ .debug_str     0x00060278       0x64 ./proto/pb_common.o
+                               0x5c0f (size before relaxing)
+ .debug_str     0x000602dc     0x4787 ./Project_Settings/Startup_Code/system_S32K144.o
+                              0x624ee (size before relaxing)
+ .debug_str     0x00064a63      0x120 ./Project_Settings/Startup_Code/startup.o
+                              0x62425 (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ./src/main.o
@@ -947,13 +1423,18 @@ OUTPUT(NIBBA.elf elf32-littlearm)
  .comment       0x00000000       0x71 ./src/clocks_and_modes.o
  .comment       0x00000000       0x71 ./src/LPUART.o
  .comment       0x00000000       0x71 ./src/FlexCAN.o
+ .comment       0x00000000       0x71 ./proto/simpleNano.pb.o
+ .comment       0x00000000       0x71 ./proto/pb_encode.o
+ .comment       0x00000000       0x71 ./proto/pb_common.o
  .comment       0x00000000       0x71 ./Project_Settings/Startup_Code/system_S32K144.o
  .comment       0x00000000       0x71 ./Project_Settings/Startup_Code/startup.o
 
-.debug_frame    0x00000000      0x37c
- .debug_frame   0x00000000       0xec ./src/main.o
- .debug_frame   0x000000ec       0x70 ./src/clocks_and_modes.o
- .debug_frame   0x0000015c       0xc8 ./src/LPUART.o
- .debug_frame   0x00000224       0xa0 ./src/FlexCAN.o
- .debug_frame   0x000002c4       0x80 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_frame   0x00000344       0x38 ./Project_Settings/Startup_Code/startup.o
+.debug_frame    0x00000000      0x8c4
+ .debug_frame   0x00000000       0xf4 ./src/main.o
+ .debug_frame   0x000000f4       0x70 ./src/clocks_and_modes.o
+ .debug_frame   0x00000164       0xc8 ./src/LPUART.o
+ .debug_frame   0x0000022c       0xa0 ./src/FlexCAN.o
+ .debug_frame   0x000002cc      0x4c0 ./proto/pb_encode.o
+ .debug_frame   0x0000078c       0x80 ./proto/pb_common.o
+ .debug_frame   0x0000080c       0x80 ./Project_Settings/Startup_Code/system_S32K144.o
+ .debug_frame   0x0000088c       0x38 ./Project_Settings/Startup_Code/startup.o

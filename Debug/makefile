@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 8
+#Progress monitor hint: 13
 first : all
 -include ../makefile.init
 
@@ -16,6 +16,7 @@ RM := rm -rf
 -include subdir.mk
 -include Project_Settings/Linker_Files/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
+-include proto/subdir.mk
 -include src/subdir.mk
 -include objects.mk
 
@@ -66,16 +67,16 @@ NIBBA.siz \
 all: warning-messages explicit-dependencies NIBBA.elf secondary-outputs
 
 # Tool invocations
-NIBBA.elf: $(OBJS) C:/Users/MTXX/Desktop/canchat/Project_Settings/Linker_Files/S32K1xx_flash.ld $(USER_OBJS)
+NIBBA.elf: $(OBJS) C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/Project_Settings/Linker_Files/S32K1xx_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #9 $@'
+	@echo 'Executing target #14 $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "NIBBA.elf" "@NIBBA.args"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 NIBBA.siz: $(EXECUTABLES)
-	@echo 'Executing target #10 $@'
+	@echo 'Executing target #15 $@'
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley $(EXECUTABLES)
 	@echo 'Finished building: $@'
