@@ -13,3 +13,8 @@ void ProtoBuff_init(void) {
 
 
 }
+
+void protoCreate(nanoPB_simpleNano msg){
+
+
+}

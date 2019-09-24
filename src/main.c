@@ -130,7 +130,18 @@ int main(void) {
   clearRXDATA();
 
   for (;;) {
-	  mainContent();
+	  //mainContent();
+
+	  nanoPB_simpleNano message;
+	  LPUART1_transmit_string("Input a:\n\r");
+	  message.a = LPUART1_receive_char();
+	  LPUART1_transmit_string("\n\rInput b:\n\r");
+	  message.b = LPUART1_receive_char();
+
+	  uint8_t buffer[2];
+	  pb_ostream_t stream;
+	  stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
+	  pb_encode(&stream, nanoPB_simpleNano_fields, &message);
   }
 }
 
