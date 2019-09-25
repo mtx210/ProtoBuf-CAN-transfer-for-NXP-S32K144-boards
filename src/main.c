@@ -81,11 +81,12 @@ int main(void) {
 
   #ifdef NODE_A
 
+  for(;;){
   	  char a,b;
   	  int x = 0;
   	  int y = 0;
   	  nanoPB_simpleNano message;
-  	  uint8_t buffer[8];
+  	  uint8_t buffer[4];
 
   	  LPUART1_transmit_string("==========NODE Alpha==========\n\r");
   	  LPUART1_transmit_string("Input a:   b:\n\r      ");
@@ -105,19 +106,20 @@ int main(void) {
   	  pb_encode(&stream, nanoPB_simpleNano_fields, &message);
 
   	  //send it to CAN
+  	  FLEXCAN0_transmit_msg(buffer);
 
-  	  	  nanoPB_simpleNano messageX;
-  	  	  //uint8_t bufferX[8];
-
-  	  	  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
-  	  	  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
-
-  	  	  messageX.a = 0;
-  	  	  messageX.b = 0;
+  	  /*
+  	  nanoPB_simpleNano messageX;
+  	  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
+  	  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
+  	  */
+  }
 
   #else
-  	  LPUART1_transmit_string("==========NODE Beta===========\n\r");
-  	  LPUART1_transmit_string("==Awaiting data from CAN....==\n\r");
+
+  LPUART1_transmit_string("==========NODE Beta===========\n\r");
+    LPUART1_transmit_string("==Awaiting data from CAN....==\n\r");
+
 
   #endif
 }
@@ -130,14 +132,7 @@ void LPIT0_Ch0_IRQHandler (void) {
 	#ifdef NODE_A
 
 	#else
-  	  nanoPB_simpleNano messageX;
-  	  uint8_t buffer[8];
-
-  	  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
-  	  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
-
-  	  messageX.a = 0;
-  	  messageX.b = 0;
+  	  FLEXCAN0_receive_msg();
 
 	#endif
   }
