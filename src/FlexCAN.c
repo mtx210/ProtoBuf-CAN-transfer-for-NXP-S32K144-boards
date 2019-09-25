@@ -153,6 +153,6 @@ void FLEXCAN0_receive_msg(void) {
 void clearRXDATA(void){
 	RxDATA[0] = 0;
 	RxDATA[1] = 0;
-	LPUART1_transmit_string("=====RXDATA CLEARED!\n\r");
-	LPUART1_transmit_string("-------------------------------------\n\r");
+	//LPUART1_transmit_string("=====RXDATA CLEARED!\n\r");
+	//LPUART1_transmit_string("-------------------------------------\n\r");
 }

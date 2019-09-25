@@ -65,48 +65,6 @@ void LPIT0_init (void) {
                               /* TRG_SEL=0: Timer chan 0 trigger source is selected*/
 }
 
-void mainContent(void){
-
-	//TODO put msg input line at the top of terminal
-
-	char buffor[8];											//creating an empty buffor array
-	int j;													//
-	for(j=0 ; j<8 ; j++){									//
-		buffor[j] = ' ';									//
-	}														//
-
-	char message[8];										//creating an array for a message
-	int i;													//
-
-	int end=0;												//typing message finished condition variable
-
-	LPUART1_transmit_string("You: ");
-
-	while(end != 1){										//typing message loop (until 'enter' is pressed)
-		for(i=0 ; i<8 ; i++){								//filling msg array unless enter is typed
-			message[i] = LPUART1_receive_char();			//
-			if(message[i] == '\r'){							//enter pressed - filling the rest of the array with spaces and sending
-				while(i<8){									//
-					message[i] = ' ';						//
-					i++;									//
-					FLEXCAN0_transmit_msg(buffor);			//
-					FLEXCAN0_transmit_msg(message);			//
-				}											//
-				end=1;										//
-				break;										//
-			}else{											//
-				LPUART1_transmit_char(message[i]);			//sending msg array
-			}												//
-		}													//
-		if(end == 1){										//if enter was pressed - going to the new line
-			LPUART1_transmit_char('\n');					//
-			LPUART1_transmit_char('\r');					//
-		}													//
-		FLEXCAN0_transmit_msg(buffor);						//transmiting msg after 8 chars are typed (due to buffor size)
-		FLEXCAN0_transmit_msg(message);						//
-	}														//
-}
-
 int main(void) {
   WDOG_disable();
   SOSC_init_8MHz();       /* Initialize system oscillator for 8 MHz xtal */
@@ -120,23 +78,37 @@ int main(void) {
 
   clearRXDATA();
 
-  for (;;) {
-	  //mainContent();
+  #ifdef NODE_A
+  	  LPUART1_transmit_string("=====NODE Alpha =====\n\r");
 
-	  nanoPB_simpleNano message;
-	  LPUART1_transmit_string("Input a:\n\r");
-	  message.a = LPUART1_receive_char();
-	  LPUART1_transmit_char(message.a);
-	  LPUART1_transmit_string("\n\rInput b:\n\r");
-	  message.b = LPUART1_receive_char();
-	  LPUART1_transmit_char(message.b);
-	  LPUART1_transmit_string("\n\r");
+  	  char a,b;
+  	  int x = 0;
+  	  int y = 0;
+  	  nanoPB_simpleNano message;
+  	  LPUART1_transmit_string("Input a:\n\r");
+  	  a = LPUART1_receive_char();
+  	  LPUART1_transmit_char(a);
+  	  LPUART1_transmit_string("\n\rInput b:\n\r");
+  	  b = LPUART1_receive_char();
+  	  LPUART1_transmit_char(b);
+  	  LPUART1_transmit_string("\n\r");
 
-	  uint8_t buffer[2];
-	  pb_ostream_t stream;
-	  stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
-	  pb_encode(&stream, nanoPB_simpleNano_fields, &message);
-  }
+  	  x = a - '0';
+  	  y = b - '0';
+
+  	  message.a = x;
+  	  message.b = y;
+
+  	  uint8_t buffer[2];
+  	  pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
+  	  pb_encode(&stream, nanoPB_simpleNano_fields, &message);
+
+  	  //send it to CAN
+  #else
+  	  LPUART1_transmit_string("=====NODE Beta ======\n\r");
+  	  LPUART1_transmit_string("Awaiting data from CAN...");
+
+  #endif
 }
 
 void LPIT0_Ch0_IRQHandler (void) {
@@ -144,7 +116,11 @@ void LPIT0_Ch0_IRQHandler (void) {
           	  	  	  	  	  	  	/* Perform read-after-write to ensure flag clears before ISR exit */
   lpit0_ch0_flag_counter++;         /* Increment LPIT0 timeout counter */
   if ((CAN0->IFLAG1 >> 4) & 1) {
-	  FLEXCAN0_receive_msg();		//receiving message (#)
+	#ifdef NODE_A
+
+	#else
+
+	#endif
   }
   PTD->PTOR |= 1<<0;                /* Toggle output on port D0 (blue LED) */
 }
