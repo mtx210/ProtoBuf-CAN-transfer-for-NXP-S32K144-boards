@@ -15,6 +15,7 @@
 
 #include "simpleNano.pb.h"
 #include "pb_encode.h"
+#include "pb_decode.h"
 #include "ProtoBuff.h"
 
 int idle_counter = 0;           /* main loop idle counter */
@@ -79,34 +80,44 @@ int main(void) {
   clearRXDATA();
 
   #ifdef NODE_A
-  	  LPUART1_transmit_string("=====NODE Alpha =====\n\r");
 
   	  char a,b;
   	  int x = 0;
   	  int y = 0;
   	  nanoPB_simpleNano message;
-  	  LPUART1_transmit_string("Input a:\n\r");
+  	  uint8_t buffer[8];
+
+  	  LPUART1_transmit_string("==========NODE Alpha==========\n\r");
+  	  LPUART1_transmit_string("Input a:   b:\n\r      ");
   	  a = LPUART1_receive_char();
   	  LPUART1_transmit_char(a);
-  	  LPUART1_transmit_string("\n\rInput b:\n\r");
+  	  LPUART1_transmit_string("    ");
   	  b = LPUART1_receive_char();
   	  LPUART1_transmit_char(b);
-  	  LPUART1_transmit_string("\n\r");
+  	  LPUART1_transmit_string("\n\r=====Awaiting response...=====\n\r");
 
   	  x = a - '0';
   	  y = b - '0';
-
   	  message.a = x;
   	  message.b = y;
 
-  	  uint8_t buffer[2];
   	  pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
   	  pb_encode(&stream, nanoPB_simpleNano_fields, &message);
 
   	  //send it to CAN
+
+  	  	  nanoPB_simpleNano messageX;
+  	  	  //uint8_t bufferX[8];
+
+  	  	  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
+  	  	  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
+
+  	  	  messageX.a = 0;
+  	  	  messageX.b = 0;
+
   #else
-  	  LPUART1_transmit_string("=====NODE Beta ======\n\r");
-  	  LPUART1_transmit_string("Awaiting data from CAN...");
+  	  LPUART1_transmit_string("==========NODE Beta===========\n\r");
+  	  LPUART1_transmit_string("==Awaiting data from CAN....==\n\r");
 
   #endif
 }
@@ -119,6 +130,14 @@ void LPIT0_Ch0_IRQHandler (void) {
 	#ifdef NODE_A
 
 	#else
+  	  nanoPB_simpleNano messageX;
+  	  uint8_t buffer[8];
+
+  	  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
+  	  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
+
+  	  messageX.a = 0;
+  	  messageX.b = 0;
 
 	#endif
   }
