@@ -8,6 +8,8 @@
 
 #include "S32K144.h" /* include peripheral declarations S32K144 */
 #include "FlexCAN.h"
+#include "simpleNano.pb.h"
+#include "pb_decode.h"
 
 uint32_t  RxCODE;              /* Received message buffer code */
 uint32_t  RxID;                /* Received message ID */
@@ -63,7 +65,7 @@ void FLEXCAN0_init(void) {
                  /* Good practice: wait for NOTRDY to clear (module ready)  */
 }
 
-void FLEXCAN0_transmit_msg(char msg[]) { /* Assumption:  Message buffer CODE is INACTIVE */
+void FLEXCAN0_transmit_msg(uint8_t buffer[]) { /* Assumption:  Message buffer CODE is INACTIVE */
   CAN0->IFLAG1 = 0x00000001;       /* Clear CAN 0 MB 0 flag without clearing others*/
 #ifdef NODE_A
   CAN0->RAMn[ 0*MSG_BUF_SIZE + 1] = 0x15540000; /* MB0 word 1: Tx msg with STD ID 0x555 */
@@ -78,18 +80,12 @@ void FLEXCAN0_transmit_msg(char msg[]) { /* Assumption:  Message buffer CODE is 
                                                 /* RTR = 0: data, not remote tx request frame*/
                                                 /* DLC = 8 bytes */
 
-  RxDATA[0] = msg[3];								//writing msg to 32bit ints by 8bits (by a char)
-  RxDATA[0] = RxDATA[0]<<8 | msg[2];
-  RxDATA[0] = RxDATA[0]<<8 | msg[1];
-  RxDATA[0] = RxDATA[0]<<8 | msg[0];
+  RxDATA[0] = buffer[3];
+  RxDATA[0] = RxDATA[0]<<8 | buffer[2];
+  RxDATA[0] = RxDATA[0]<<8 | buffer[1];
+  RxDATA[0] = RxDATA[0]<<8 | buffer[0];
 
-  RxDATA[1] = msg[7];
-  RxDATA[1] = RxDATA[1]<<8 | msg[6];
-  RxDATA[1] = RxDATA[1]<<8 | msg[5];
-  RxDATA[1] = RxDATA[1]<<8 | msg[4];
-
-  CAN0->RAMn[ 0*MSG_BUF_SIZE + 2] = RxDATA[0];		//sending msg to memory
-  CAN0->RAMn[ 0*MSG_BUF_SIZE + 3] = RxDATA[1];
+  CAN0->RAMn[2] = RxDATA[0];		//sending msg to memory
 }
 
 void FLEXCAN0_receive_msg(void) {
@@ -99,10 +95,41 @@ void FLEXCAN0_receive_msg(void) {
   RxCODE   = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 0] & 0x07000000) >> 24;  /* Read CODE field */
   RxID     = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 1] & CAN_WMBn_ID_ID_MASK)  >> CAN_WMBn_ID_ID_SHIFT ;
   RxLENGTH = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 0] & CAN_WMBn_CS_DLC_MASK) >> CAN_WMBn_CS_DLC_SHIFT;
-  for (j=0; j<2; j++) {  /* Read two words of data (8 bytes) */
+  /*
+  for (j=0; j<2; j++) {  /* Read two words of data (8 bytes)
     RxDATA[j] = CAN0->RAMn[ 4*MSG_BUF_SIZE + 2 + j];
   }
+  */
 
+  RxDATA[0] = CAN0->RAMn[18];
+
+  nanoPB_simpleNano messageX;
+  uint8_t buffer[4];
+  messageX.a = 0;
+  messageX.b = 0;
+
+  buffer[0] = RxDATA[0];
+  RxDATA[0] = RxDATA[0]>>8;
+  buffer[1] = RxDATA[0];
+  RxDATA[0] = RxDATA[0]>>8;
+  buffer[2] = RxDATA[0];
+  RxDATA[0] = RxDATA[0]>>8;
+  buffer[3] = RxDATA[0];
+
+  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
+  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
+
+  int a=0;
+  int b=0;
+  a = messageX.a;
+  b = messageX.b;
+
+  int sum = a+b;
+  char suma = sum + '0';
+  LPUART1_transmit_char(suma);
+
+
+  /*
   if(messageDisplayed == 0){							//if this is the first msg - print notification from the start of the line
 	  LPUART1_transmit_string("\r");
 	  LPUART1_transmit_string("Message: ");
@@ -144,6 +171,7 @@ void FLEXCAN0_receive_msg(void) {
 	  endStatus = 0;
 	  messageDisplayed = 0;
   }
+  */
 
   RxTIMESTAMP = (CAN0->RAMn[ 0*MSG_BUF_SIZE + 0] & 0x000FFFF);
   dummy = CAN0->TIMER;             /* Read TIMER to unlock message buffers */

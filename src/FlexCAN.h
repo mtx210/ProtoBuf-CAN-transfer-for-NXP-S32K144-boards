@@ -10,7 +10,7 @@
 //#define NODE_A        /* If using 2 boards as 2 nodes, NODE A & B use different CAN IDs */
 
 void FLEXCAN0_init (void);
-void FLEXCAN0_transmit_msg (char[]);
+void FLEXCAN0_transmit_msg (uint8_t[]);
 void FLEXCAN0_receive_msg (void);
 
 #endif /* FLEXCAN_H_ */
