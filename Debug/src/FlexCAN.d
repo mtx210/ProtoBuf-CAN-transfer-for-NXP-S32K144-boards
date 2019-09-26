@@ -24,7 +24,8 @@ src/FlexCAN.o: ../src/FlexCAN.c \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/string.h \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstring \
  C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/string_api.h \
- C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/proto/pb_decode.h
+ C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/proto/pb_decode.h \
+ C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/proto/pb_encode.h
 
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/lib_c99.prefix:
 
@@ -77,3 +78,5 @@ C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstring:
 C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/string_api.h:
 
 C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/proto/pb_decode.h:
+
+C:/Users/MTXX/workspaceS32DS.ARM.2018.R1/hello_nanoPB/proto/pb_encode.h:
