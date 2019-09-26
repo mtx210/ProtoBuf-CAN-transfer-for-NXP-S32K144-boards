@@ -1,22 +1,18 @@
 /* main.c                              Copyright NXP 2016
- * Description: Simple CAN 2.0 transmit / receive at 500 K baud
- *              for S32K144
  * 2016 Jul 22 S. Mihalik - Initial version
  * 2016 Sep 12 SM - Updated with SBC init, Node A - B communication
  * 2016 Oct 31 SM- Clocks adjusted for 160 MHz SPLL, updated loop logic
  * 2017 Jul 03 SM- Removed code for: MC33903 on obsolete EVB,
- *                 initial transmit for node B, tx_msg_count
  */
 
 #include "S32K144.h" /* include peripheral declarations S32K144 */
-#include "FlexCAN.h"
 #include "clocks_and_modes.h"
+#include "FlexCAN.h"
 #include "LPUART.h"
-
-#include "simpleNano.pb.h"
 #include "pb_encode.h"
 #include "pb_decode.h"
 #include "ProtoBuff.h"
+#include "simpleNano.pb.h"
 
 int idle_counter = 0;           /* main loop idle counter */
 int lpit0_ch0_flag_counter = 0; /* LPIT0 chan 0 timeout counter */
@@ -79,6 +75,7 @@ int main(void) {
 
   clearRXDATA();
 
+  LPUART1_transmit_string("==========NODE Alpha==========\n\r");
   #ifdef NODE_A
 
   for(;;){
@@ -87,8 +84,8 @@ int main(void) {
   	  int y = 0;
   	  nanoPB_simpleNano message;
   	  uint8_t buffer[4];
+  	  uint8_t empty[4] = {' ',' ',' ',' '};
 
-  	  LPUART1_transmit_string("==========NODE Alpha==========\n\r");
   	  LPUART1_transmit_string("Input a:   b:\n\r      ");
   	  a = LPUART1_receive_char();
   	  LPUART1_transmit_char(a);
@@ -106,30 +103,25 @@ int main(void) {
   	  pb_encode(&stream, nanoPB_simpleNano_fields, &message);
 
   	  //send it to CAN
+  	  FLEXCAN0_transmit_msg(empty);
   	  FLEXCAN0_transmit_msg(buffer);
-
-  	  /*
-  	  nanoPB_simpleNano messageX;
-  	  pb_istream_t streamX = pb_istream_from_buffer(buffer, sizeof(buffer));
-  	  pb_decode(&streamX, nanoPB_simpleNano_fields, &messageX);
-  	  */
   }
 
   #else
 
   LPUART1_transmit_string("==========NODE Beta===========\n\r");
-    LPUART1_transmit_string("==Awaiting data from CAN....==\n\r");
-
+  LPUART1_transmit_string("==Awaiting data from CAN....==\n\r");
 
   #endif
 }
 
 void LPIT0_Ch0_IRQHandler (void) {
-  LPIT0->MSR |= LPIT_MSR_TIF0_MASK; /* Clear LPIT0 timer flag 0 */
-          	  	  	  	  	  	  	/* Perform read-after-write to ensure flag clears before ISR exit */
+  LPIT0->MSR |= LPIT_MSR_TIF0_MASK; /* Clear LPIT0 timer flag 0 *//* Perform read-after-write to ensure flag clears before ISR exit */
   lpit0_ch0_flag_counter++;         /* Increment LPIT0 timeout counter */
   if ((CAN0->IFLAG1 >> 4) & 1) {
 	#ifdef NODE_A
+	  //TODO Node A receive sum
+	  FLEXCAN0_receive_sum();
 
 	#else
   	  FLEXCAN0_receive_msg();

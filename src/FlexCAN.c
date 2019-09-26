@@ -10,6 +10,7 @@
 #include "FlexCAN.h"
 #include "simpleNano.pb.h"
 #include "pb_decode.h"
+#include "pb_encode.h"
 
 uint32_t  RxCODE;              /* Received message buffer code */
 uint32_t  RxID;                /* Received message ID */
@@ -89,18 +90,75 @@ void FLEXCAN0_transmit_msg(uint8_t buffer[]) { /* Assumption:  Message buffer CO
 }
 
 void FLEXCAN0_receive_msg(void) {
-  uint8_t j;
   uint32_t dummy;
-  
   RxCODE   = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 0] & 0x07000000) >> 24;  /* Read CODE field */
   RxID     = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 1] & CAN_WMBn_ID_ID_MASK)  >> CAN_WMBn_ID_ID_SHIFT ;
   RxLENGTH = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 0] & CAN_WMBn_CS_DLC_MASK) >> CAN_WMBn_CS_DLC_SHIFT;
-  /*
-  for (j=0; j<2; j++) {  /* Read two words of data (8 bytes)
-    RxDATA[j] = CAN0->RAMn[ 4*MSG_BUF_SIZE + 2 + j];
-  }
-  */
+  RxDATA[0] = CAN0->RAMn[18];
 
+  nanoPB_simpleNano message;
+  uint8_t buffer[4];
+  message.a = 0;
+  message.b = 0;
+
+  buffer[0] = RxDATA[0];
+  RxDATA[0] = RxDATA[0]>>8;
+  buffer[1] = RxDATA[0];
+  RxDATA[0] = RxDATA[0]>>8;
+  buffer[2] = RxDATA[0];
+  RxDATA[0] = RxDATA[0]>>8;
+  buffer[3] = RxDATA[0];
+
+  pb_istream_t stream = pb_istream_from_buffer(buffer, sizeof(buffer));
+  pb_decode(&stream, nanoPB_simpleNano_fields, &message);
+
+  int a=0;
+  int b=0;
+  a = message.a;
+  b = message.b;
+
+  char c1 = a + '0';
+  char c2 = b + '0';
+
+  LPUART1_transmit_string("Received input: ");
+  LPUART1_transmit_char(c1);
+  LPUART1_transmit_string(" , ");
+  LPUART1_transmit_char(c2);
+  LPUART1_transmit_string("\n\r==Awaiting data from CAN....==\n\r");
+
+  int sum = a+b;
+
+	  nanoPB_simpleNano messageX;
+	  uint8_t bufferX[4];
+	  uint8_t empty[4] = {' ',' ',' ',' '};
+
+	  messageX.a = sum;
+	  messageX.b = 0;
+
+	  pb_ostream_t streamX = pb_ostream_from_buffer(bufferX, sizeof(bufferX));
+	  pb_encode(&streamX, nanoPB_simpleNano_fields, &messageX);
+
+	  FLEXCAN0_transmit_msg(empty);
+	  FLEXCAN0_transmit_msg(bufferX);
+
+/*char sumString[12];
+sprintf(sumString, "%d", sum);
+LPUART1_transmit_string("Received input: ");
+LPUART1_transmit_string(sumString);
+LPUART1_transmit_string("\n\r");
+*/
+
+  RxTIMESTAMP = (CAN0->RAMn[ 0*MSG_BUF_SIZE + 0] & 0x000FFFF);
+  dummy = CAN0->TIMER;             /* Read TIMER to unlock message buffers */
+  CAN0->IFLAG1 = 0x00000010;       /* Clear CAN 0 MB 4 flag without clearing others*/
+}
+
+void FLEXCAN0_receive_sum(void) {
+  uint8_t j;
+  uint32_t dummy;
+  RxCODE   = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 0] & 0x07000000) >> 24;  /* Read CODE field */
+  RxID     = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 1] & CAN_WMBn_ID_ID_MASK)  >> CAN_WMBn_ID_ID_SHIFT ;
+  RxLENGTH = (CAN0->RAMn[ 4*MSG_BUF_SIZE + 0] & CAN_WMBn_CS_DLC_MASK) >> CAN_WMBn_CS_DLC_SHIFT;
   RxDATA[0] = CAN0->RAMn[18];
 
   nanoPB_simpleNano messageX;
@@ -124,54 +182,13 @@ void FLEXCAN0_receive_msg(void) {
   a = messageX.a;
   b = messageX.b;
 
-  int sum = a+b;
-  char suma = sum + '0';
-  LPUART1_transmit_char(suma);
+  char sumString[12];
+  sprintf(sumString, "%d", a);
+  LPUART1_transmit_string("\r#####Solved sum: ");
+  LPUART1_transmit_string(sumString);
+  LPUART1_transmit_string("#####\n\r");
+  LPUART1_transmit_string("Input a:   b:\n\r      ");
 
-
-  /*
-  if(messageDisplayed == 0){							//if this is the first msg - print notification from the start of the line
-	  LPUART1_transmit_string("\r");
-	  LPUART1_transmit_string("Message: ");
-	  messageDisplayed = 1;								//state that first msg was received
-  }
-
-  int i1,i2;
-  if((char)RxDATA[0] != '#'){							//print msg chars unless its a hash (msg end)
-	  LPUART1_transmit_char((char)RxDATA[0]);
-  }else{
-	  endStatus = 1;
-  }
-  for(i1=0 ; i1<3 ; i1++){
-	  RxDATA[0] = RxDATA[0]>>8;
-	  if((char)RxDATA[0] != '#'){
-		  LPUART1_transmit_char((char)RxDATA[0]);
-	  }else{
-		  endStatus = 1;
-	  }
-  }
-
-  if((char)RxDATA[1] != '#'){
-	  LPUART1_transmit_char((char)RxDATA[1]);
-  }else{
-	  endStatus = 1;
-  }
-  for(i2=0 ; i2<3 ; i2++){
-	  RxDATA[1] = RxDATA[1]>>8;
-	  if((char)RxDATA[1] != '#'){
-		  LPUART1_transmit_char((char)RxDATA[1]);
-	  }else{
-		  endStatus = 1;
-	  }
-  }
-
-  if(endStatus == 1){									//hash found - end of msg, prepare new line to type new msg
-	  LPUART1_transmit_string("\n\r");
-	  LPUART1_transmit_string("You: ");
-	  endStatus = 0;
-	  messageDisplayed = 0;
-  }
-  */
 
   RxTIMESTAMP = (CAN0->RAMn[ 0*MSG_BUF_SIZE + 0] & 0x000FFFF);
   dummy = CAN0->TIMER;             /* Read TIMER to unlock message buffers */
